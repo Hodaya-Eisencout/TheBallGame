@@ -1,11 +1,9 @@
-function onBallClick() {
-  var elBall = document.querySelector('.ball');
-
+function onBallClick(elBall, maxDiameter) {
   var currentSize = elBall.offsetWidth;
   var randomSize = getRandomInt(20, 60);
   var newSize = currentSize + randomSize;
 
-  if (newSize > 400) {
+  if (newSize > maxDiameter) {
     newSize = 100;
   }
 
@@ -13,6 +11,5 @@ function onBallClick() {
   elBall.style.height = newSize + 'px';
 
   elBall.innerText = newSize;
-
   elBall.style.backgroundColor = getRandomColor();
 }
